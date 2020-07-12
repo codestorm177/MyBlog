@@ -3,7 +3,7 @@
 }
 
 nav {
-  border-bottom: 3px solid #61dafb;
+  border-bottom: 3px solid #343636;
 }
 
 .nav-container {
@@ -18,14 +18,16 @@ nav {
   padding: 1%;
   width: 10%;
   text-align: center;  
-  background-color: #9599a1;  
+  background-color: #d9dce2;  
 }  
 
 
 .nav-link {
   text-decoration: none;
-  color: #145fe0; 
-
+  color: #4f5a6d; 
+  font-size: large;
+  font-weight: 700;
+  
 }
 
 .home-container {
@@ -43,11 +45,11 @@ nav {
 
 .article-item {
   text-decoration: none;
-  border: 1px solid black;
+  border: 2px solid black;
   max-width: 50%;
   margin: 0 auto;
   padding: 2%;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
   color: gray;  
 }
 
