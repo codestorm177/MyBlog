@@ -4,7 +4,7 @@ class Home extends React.Component {
 
     render() {
         return (
-            <>
+            <div className="home-container">
                 <h1>Welcome to my blog!</h1>
 
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
@@ -19,7 +19,7 @@ class Home extends React.Component {
                 Urna duis convallis convallis tellus id interdum velit. Sed egestas egestas fringilla phasellus faucibus scelerisque eleifend donec. 
                 Semper eget duis at tellus at urna condimentum mattis pellentesque.
                 Vehicula ipsum a arcu cursus vitae congue mauris rhoncus.</p>
-            </>
+            </div>
         )
     }
 }

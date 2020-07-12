@@ -2,6 +2,68 @@
   text-align: center;
 }
 
+nav {
+  border-bottom: 3px solid #61dafb;
+}
+
+.nav-container {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.nav-element {
+  border: 1px solid #282c34;
+  border-radius: 5px;
+  padding: 1%;
+  width: 10%;
+  text-align: center;  
+  background-color: #9599a1;  
+}  
+
+
+.nav-link {
+  text-decoration: none;
+  color: #145fe0; 
+
+}
+
+.home-container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+.home-container h1 {
+  font-style: oblique;
+}
+
+.home-container p {
+  line-height: 2em;
+  
+}
+
+.article-item {
+  text-decoration: none;
+  border: 1px solid black;
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 2%;
+  margin-bottom: 10%;
+  color: gray;  
+}
+
+.article-link {
+  text-decoration: none;
+}
+
+.article-link h3 {
+  color: #444547;
+}
+
+.article-link p {
+  color: #94979b;
+}
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
