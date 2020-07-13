@@ -5,9 +5,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
-
-
-let db = new sqlite3.Database('../db.sqlite');
+let db = new sqlite3.Database('db.sqlite');
 
 app.get('/api/articles', (req, res, next) => {
     db.all("SELECT * FROM Articles", (err, rows) => {
@@ -77,7 +75,7 @@ app.post('/api/articles/:name/upvote', (req, res, next) => {
 app.post('/api/articles/:name/comment', (req, res, next) => {
     const articleName = req.params.name;
     const { username, text } = req.body;
-
+    
     db.get("SELECT * FROM Articles WHERE name = $articleName", {$articleName: articleName}, (err, row) => {
         if (err) {
             next(err);
