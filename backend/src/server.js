@@ -9,6 +9,19 @@ app.use(bodyParser.json());
 
 let db = new sqlite3.Database('../db.sqlite');
 
+app.get('/api/articles', (req, res, next) => {
+    db.all("SELECT * FROM Articles", (err, rows) => {
+        if (err) {
+            next(err);
+        }
+        else if (rows) {
+            res.status(200).send(rows);
+        }
+        else {
+            res.status(400).send()
+        }
+    });
+});
 
 app.get('/api/articles/:name', (req, res, next) => {
     const articleName = req.params.name;

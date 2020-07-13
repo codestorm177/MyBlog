@@ -16,11 +16,23 @@ import NotFound from '../Pages/NotFound';
 
 class App extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      articles: articleContent
+      articleContent: articleContent,
+      articleInfo: [],
+      isLoaded: false,
     };
+
+    
   }
+
+  componentDidMount() {    
+    fetch('/api/articles')
+      .then(response => response.json())
+      .then(jsonResponse => this.setState({articleInfo: jsonResponse}))
+      .then(() => this.setState({isLoaded: true})); 
+  }
+   
   render() {
     return (
       
@@ -30,11 +42,17 @@ class App extends React.Component {
           <Switch>
             <Route path="/" component={Home} exact /> 
             <Route path="/about" component={About} />
-            <Route path="/articlelist" render={(props) => (<ArticleList articleContent={this.state.articles} {...props} />)}/>
-            <Route path="/article/:name" render={(props) => (<Article articleContent={this.state.articles} {...props} />)} />
+            {
+              this.state.isLoaded ? 
+              <>
+                <Route path="/articlelist" render={(props) => (<ArticleList articlesContent={this.state.articleContent} articlesInfo={this.state.articleInfo} {...props} />)}/>
+                <Route path="/article/:name" render={(props) => (<Article articlesContent={this.state.articleContent} articlesInfo={this.state.articleInfo} {...props} />)} />             
+              </>
+              : ""
+            }
+            
             <Route component={NotFound} />
-          </Switch>
-          
+          </Switch>         
                 
         </div>
       </Router>
