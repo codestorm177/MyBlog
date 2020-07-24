@@ -4,16 +4,20 @@ class About extends React.Component {
 
     render() {
         return (
-            <>
-                <h1>About Me!</h1>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                dolore magna aliqua. Nec ullamcorper sit amet risus nullam eget felis eget. Venenatis lectus magna fringilla urna.
-                Nisl condimentum id venenatis a condimentum vitae sapien. Elit at imperdiet dui accumsan sit amet. Porta nibh venenatis cras sed felis eget velit aliquet. 
-                Malesuada nunc vel risus commodo. Vitae sapien pellentesque habitant morbi tristique senectus et netus. Vulputate dignissim suspendisse in est ante in nibh mauris cursus. 
-                Pharetra massa massa ultricies mi quis hendrerit dolor magna eget.</p>
+            <div className="about-container">
+                <h1>About Me</h1>
                 
-            </>
+
+                <p>Hello!  My name is Abhimanyu Deshpande.  I am currently a student at the University of Michigan, majoring in Computer Science and minoring in Economics. 
+                I am interested in researching Data Science concepts such as Natural Language Processing and discovering new machine learning classification algorithms.  Some of 
+                my other programming interests include Web Development and I am trying to gain experience in game development currently as well.  Its no secret that currently there is a trade-off between using a person
+                to tackle on a specific problem versus using a computer.  For instance, computers are better at crunching numbers and doing raw number data analysis while people are naturally skilled at recognizing 
+                patterns.  Because of this, I am drawn to the idea of using designing algorithms to merge this gap, and make computers better trained at recognizing certain types of patterns depending on
+                the environments they are in.  This idea has wide ranging implications - from being used in the hospital to organize data and treatments to being used in cars to being used at Wall Street - which
+                makes this idea even more enticing to me.
+                </p>
+                
+            </div>
         )
     }
 }

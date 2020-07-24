@@ -22,15 +22,23 @@ class Article extends React.Component {
             <>
                 <h1>{articleContent.title}</h1>
 
-                <button onClick={() => this.props.handleUpvote(name)}>Upvote!</button>
-                <p>This article has {articleInfo.upvotes} upvotes.</p>              
+                <div className="article-content">
+                    {articleContent.content.map((paragraph, key) => {
+                        return (
+                        <div>
+                            <br />
+                            <p key={key} className="article-para">{paragraph}</p>
+                        </div>
+                        )}
+                    )}
+                </div>
+                
+                <div className="upvote-button">
+                    <button onClick={() => this.props.handleUpvote(name)}>Upvote!</button>
+                    <span>{articleInfo.upvotes}</span>
+                </div>                
 
-
-                {articleContent.content.map((paragraph, key) => (
-                    <p key={key}>{paragraph}</p>
-                ))}
-
-                <CommentList comments={articleComments} />
+                <CommentList comments={articleComments} addComment={this.props.addComment} name={name} />
 
                 <h3>Other Articles You Might Enjoy...</h3>
                 <List articlesContent={filteredArticles} />                

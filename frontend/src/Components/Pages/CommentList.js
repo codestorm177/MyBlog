@@ -1,16 +1,19 @@
 import React from 'react';
+import Comment from './Comment';
 
 class CommentList extends React.Component {
     render() {
         return (
             <div>
-                <h3>Comments:</h3>
-                {this.props.comments.map((comment,key) => (
-                    <div className="comment" key={key}>
-                        <h4>{comment.username}</h4>
-                        <p>{comment.text}</p>
-                    </div>
-                ))}
+                <Comment addComment={this.props.addComment} name={this.props.name} />
+                <div className="comment-list">
+                    {this.props.comments.map((comment,key) => (
+                        <div className="comment" key={key}>
+                            <strong>{comment.username}</strong>
+                            <p>{comment.text}</p>
+                        </div>
+                    ))}
+                </div>
             </div>
         )
     }

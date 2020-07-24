@@ -2,36 +2,33 @@
   text-align: center;
 }
 
-nav {
-  border-bottom: 3px solid #343636;
+header {
+  text-align: center;
 }
 
 .nav-container {
-  list-style-type: none;
   display: flex;
+  border-bottom: 1px solid #282c34;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 .nav-element {
-  border: 1px solid #282c34;
-  border-radius: 5px;
-  padding: 1%;
-  width: 10%;
-  text-align: center;  
-  background-color: #d9dce2;  
-}  
+  list-style-type: none;
+}
 
 
 .nav-link {
   text-decoration: none;
-  color: #4f5a6d; 
-  font-size: large;
-  font-weight: 700;
-  
+  color: #444547;
+  font-size: 20px;
+}
+.nav-link:hover {
+  color: #c3d1d4;
 }
 
 .home-container {
-  max-width: 80%;
+  max-width: 50%;
   margin: 0 auto;
 }
 .home-container h1 {
@@ -39,9 +36,67 @@ nav {
 }
 
 .home-container p {
-  line-height: 2em;
-  
+  line-height: 2em;  
 }
+
+.about-container {
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.about-container h1 {
+  font-style: oblique;
+}
+
+.about-container p {
+  line-height: 2em;
+}
+
+.article-content {
+  border-left: 1px solid black;
+  max-width: 60%;
+  margin: 0 auto;
+  padding-left: 2%;
+}
+
+.upvote-button {
+  width: 60%;
+  margin: 0 auto;
+  border-bottom: 1px solid gray;
+  padding-bottom: 1%;
+}
+
+.upvote-button span {
+  font-weight: 700;
+  margin: 0.5%;
+  padding-top: 10%;
+}
+
+.comment-list {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 2%;
+  background-color: #eaedee;
+  border: 1 px solid #869092;
+  border-radius: 10px;
+  padding: 2% 1%;
+}
+
+.comment {
+  border: 1px solid #474849;
+  margin: 2%;
+  border-radius: 10px;
+  background-color: #f3f8e3;
+  display: flex;
+  flex-direction: column;
+}
+
+.comment strong {
+  text-align: left;
+  margin: 2%;
+  color: blue;
+}
+
 
 .article-item {
   text-decoration: none;

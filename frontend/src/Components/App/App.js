@@ -21,9 +21,15 @@ class App extends React.Component {
       articleContent: articleContent,
       articleInfo: [],
       isLoaded: false,
+      user: {
+        username: '',
+        password: '',
+        isLoggedIn: false,        
+      }
     };
 
     this.handleUpvote = this.handleUpvote.bind(this);    
+    this.addComment = this.addComment.bind(this);
   }
 
   componentDidMount() {    
@@ -32,8 +38,6 @@ class App extends React.Component {
       .then(jsonResponse => this.setState({articleInfo: jsonResponse}))
       .then(() => this.setState({isLoaded: true})); 
   }
-
-
 
   handleUpvote(name) {
     fetch(`/api/articles/${name}/upvote`, {method: 'post'})
@@ -45,6 +49,23 @@ class App extends React.Component {
       this.setState({articleInfo: oldInfo});
     });    
 
+  }
+
+  addComment(state, name) {    
+    fetch(`/api/articles/${name}/comment`, {
+        method: 'post',
+        body: JSON.stringify({username: state.username, text: state.comment}),
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      }
+      ).then(response => response.json())
+      .then(jsonResponse => {
+        const oldInfo = this.state.articleInfo;
+        const index = oldInfo.findIndex(article => article.name = jsonResponse.name);
+        oldInfo[index] = jsonResponse;
+        this.setState({articleInfo: oldInfo});
+      });
   }
    
   render() {
@@ -60,7 +81,7 @@ class App extends React.Component {
               this.state.isLoaded ? 
               <>
                 <Route path="/articlelist" render={(props) => (<ArticleList articlesContent={this.state.articleContent} articlesInfo={this.state.articleInfo} {...props} />)}/>
-                <Route path="/article/:name" render={(props) => (<Article articlesContent={this.state.articleContent} articlesInfo={this.state.articleInfo} handleUpvote={this.handleUpvote} {...props} />)} />             
+                <Route path="/article/:name" render={(props) => (<Article articlesContent={this.state.articleContent} articlesInfo={this.state.articleInfo} handleUpvote={this.handleUpvote} addComment={this.addComment} {...props} />)} />             
               </>
               : ""
             }
