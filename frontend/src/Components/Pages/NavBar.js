@@ -20,7 +20,7 @@ class NavBar extends React.Component {
                             <Link to="/articlelist" className="nav-link">Articles</Link>
                         </li>
                         <li className="nav-element">
-                            <Link to="/login" className="nav-link">Login/Register</Link>
+                            <Link to="/login" className="nav-link">{this.props.textToDisplay}</Link>
                         </li>
                     </ul>
                 </nav> 

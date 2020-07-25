@@ -52,6 +52,55 @@ header {
   line-height: 2em;
 }
 
+.user-login {
+  width: 600px;
+  height: 500px;
+  background-color: #869092;
+  margin: 10% auto;
+}
+
+.user-login h2 {
+  border-bottom: 1px solid black;
+  padding-top: 6%;
+  width: 90%;
+  margin: 0 auto;
+  
+}
+
+.login-form {
+  width: 60%;
+  height: 65%;
+  border: 1px solid rgb(146, 116, 116);
+  border-radius: 15px;
+  margin: 8% auto;
+}
+
+.login-form label {
+  display: block;
+  padding: 0 0 5px 2px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+  font-size: 11px;
+}
+
+.login-form input[type=text],
+.login-form input[type=password] {
+  font-family: 'Lato', Calibri, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  padding: 5px;
+  margin-bottom: 5px;  
+  border: 3px solid #ebe6e2;
+  border-radius: 5px;
+  transition: all 0.3s ease-out;
+}
+
+
 .article-content {
   border-left: 1px solid black;
   max-width: 60%;
@@ -97,6 +146,45 @@ header {
   color: blue;
 }
 
+textarea {
+  width: 30%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+
+.submit-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.register-button {
+  position: relative;
+  top: -40px;
+  background-color: #61dafb;
+  border: none;
+  padding: 10px 32px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.register-button .link {
+  color: white;
+  text-decoration: none;
+}
+
+.register-button:hover {
+  background-color: #eaedee;
+}
 
 .article-item {
   text-decoration: none;

@@ -16,7 +16,6 @@ class Article extends React.Component {
 
         const articleInfo = this.props.articlesInfo.find(article => article.name ===  name); 
         const articleComments = JSON.parse(articleInfo.comments)
-        console.log(articleComments);   
     
         return (
             <>
@@ -25,9 +24,9 @@ class Article extends React.Component {
                 <div className="article-content">
                     {articleContent.content.map((paragraph, key) => {
                         return (
-                        <div>
+                        <div key={key}>
                             <br />
-                            <p key={key} className="article-para">{paragraph}</p>
+                            <p className="article-para">{paragraph}</p>
                         </div>
                         )}
                     )}
@@ -38,7 +37,7 @@ class Article extends React.Component {
                     <span>{articleInfo.upvotes}</span>
                 </div>                
 
-                <CommentList comments={articleComments} addComment={this.props.addComment} name={name} />
+                <CommentList isLoggedIn={this.props.isLoggedIn} comments={articleComments} addComment={this.props.addComment} name={name} />
 
                 <h3>Other Articles You Might Enjoy...</h3>
                 <List articlesContent={filteredArticles} />                
