@@ -44,13 +44,19 @@ class App extends React.Component {
   }
 
   handleUpvote(name) {
-    fetch(`/api/articles/${name}/upvote?user=${this.state.user.username}`, {method: 'post'})
+    fetch(`/api/articles/${name}/upvote?username=${this.state.user.username}`, {method: 'post'})
     .then(response => response.json())
     .then(jsonResponse => {
-      const oldInfo = this.state.articleInfo;
-      const index = oldInfo.findIndex(article => article.name = jsonResponse.name);
-      oldInfo[index] = jsonResponse;
-      this.setState({articleInfo: oldInfo});
+      if (jsonResponse.message) {
+        alert('Must Log In to Upvote!');
+      }
+      else {
+        const oldInfo = this.state.articleInfo;
+        const index = oldInfo.findIndex(article => article.name = jsonResponse.name);
+        oldInfo[index] = jsonResponse;
+        this.setState({articleInfo: oldInfo});
+      }
+     
     });    
 
   }

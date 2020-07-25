@@ -9,13 +9,18 @@ db.serialize( () => {
     db.run("INSERT OR IGNORE INTO Users (username, password, upvote_ids) VALUES ($username, $password, $upvote_ids)", {
         $username: 'Bob',
         $password: 'byob',
-        $upvote_ids: JSON.stringify([1, 2, 3])
+        $upvote_ids: JSON.stringify([])
     });
     db.run("INSERT OR IGNORE INTO Users (username, password, upvote_ids) VALUES ($username, $password, $upvote_ids)", {
         $username: 'codergeek123',
         $password: 'billbye',
-        $upvote_ids: JSON.stringify([1, 2])
+        $upvote_ids: JSON.stringify([])
     });
+    db.run("INSERT OR IGNORE INTO Users (username, password, upvote_ids) VALUES ($username, $password, $upvote_ids)", {
+        $username: 'abhimany',
+        $password: 'whygre',
+        $upvote_ids: JSON.stringify([])
+    })
 
     db.run("INSERT OR IGNORE INTO Articles (name, upvotes, comments) VALUES ($name, $upvotes, $comments)", {
         $name: 'learn-react',
