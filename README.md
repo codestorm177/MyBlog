@@ -15,5 +15,12 @@ Once logged in, you will be able to click on articles and upvote them if you fin
 ### Commenting
 Once logged in, you will be able to comment on articles as well.  You can comment any number of times.
 
+## Article Sources:
+
+https://spin.atomicobject.com/2017/10/12/learn-react-quickly/
+
+https://www.sitepoint.com/build-a-simple-web-server-with-node-js/
+
+https://jobs.washingtonpost.com/article/little-known-tricks-to-get-your-resume-to-stand-out/
 
 
