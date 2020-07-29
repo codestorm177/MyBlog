@@ -71,9 +71,7 @@ app.post('/api/articles/:name/upvote', (req, res, next) => {
             res.status(400).send()
         }
         else {
-            const upvote_ids = JSON.parse(row.upvote_ids); //list of all the article_ids that the user has upvoted
-            console.log(upvote_ids)
-            
+            const upvote_ids = JSON.parse(row.upvote_ids); //list of all the article_ids that the user has upvoted            
 
             db.get("SELECT * FROM Articles WHERE name=$articleName", {$articleName: articleName}, (err, row) => {
                 if (err) {
@@ -91,8 +89,7 @@ app.post('/api/articles/:name/upvote', (req, res, next) => {
                     }
 
                     if (index === -1) {
-                        upvote_ids.push(row.id);  
-                        console.log(upvote_ids)                      
+                        upvote_ids.push(row.id);                     
                         
                         db.run("UPDATE Articles SET upvotes = $upvotes WHERE name=$articleName", { //update number of upvotes on article
                             $upvotes: numUpvotes + 1,
@@ -143,7 +140,6 @@ app.post('/api/articles/:name/comment', (req, res, next) => {
         else {
             let commentArray = JSON.parse(row.comments);
             commentArray.push({username, text});
-            console.log(commentArray);
             
             db.run("UPDATE Articles SET comments = $commentArray WHERE name = $articleName" , {
                 $commentArray: JSON.stringify(commentArray),
@@ -194,8 +190,6 @@ app.post('/api/register', (req, res, next) => {
     });
 });
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname + '/build/index.html'));
-})
+
 
 app.listen(8000, () => console.log("Listening on PORT 8000."));
